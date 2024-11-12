@@ -1,4 +1,4 @@
-﻿Start-Transcript -Path "$env:windir\temp\_ComputerRename_Script-Absolute.log"
+﻿Start-Transcript -Path "$env:windir\temp\_ComputerRename_Script-Systrack.log"
 Suspend-BitLocker -MountPoint "C" -RebootCount 1 -Verbose
 ##########################################################
 ###############-------------Step 1---#####################
@@ -10,7 +10,7 @@ Suspend-BitLocker -MountPoint "C" -RebootCount 1 -Verbose
 $KeyLocation = "\\pw1appsccm01\sources$\temp\temp5.key"
 # $KeyLocation = "\\NetworkLocation\c$\temp\EncryptedKey.key"
 $username = "ibddomain\lrazo"
-$LocationPrefix = "ATLL"
+#$LocationPrefix = "ATLL"
 ##
 ##
 ##########################################################
@@ -45,7 +45,7 @@ $ComputerName = $env:COMPUTERNAME.substring(0, 4)
 
 Rename-Computer -ComputerName $env:COMPUTERNAME -NewName "$LocationPrefix-$serial" -LocalCredential $Credential -DomainCredential $Credential  -Force -PassThru  -Verbose
 Write-Host "New computer name is " $env:COMPUTERNAME
-shutdown /r /f /t 14400 /c "System needs to reboot, please save your work."
+shutdown /r /f /t 14400 /c "Please Reboot your Computer, System needs to reboot, please save your work."
 
 Stop-Transcript
 
