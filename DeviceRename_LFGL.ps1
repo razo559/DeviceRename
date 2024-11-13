@@ -41,6 +41,7 @@ $ComputerName = $env:COMPUTERNAME.substring(0, 4)
     "PADL"  {$LocationPrefix = "LFGL" ; Write-Host -Object "LFGL" }
     "HOLL"  {$LocationPrefix = "LFGL" ; Write-Host -Object "LFGL" }
     "NORL"  {$LocationPrefix = "LFGL" ; Write-Host -Object "LFGL" }
+    "LFGL"  {$LocationPrefix = "LFGL" ; Write-Host -Object "LFGL" }
 }#
 
 Rename-Computer -ComputerName $env:COMPUTERNAME -NewName "$LocationPrefix-$serial" -LocalCredential $Credential -DomainCredential $Credential  -Force -PassThru  -Verbose
