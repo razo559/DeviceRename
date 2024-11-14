@@ -1,4 +1,6 @@
-﻿Start-Transcript -Path "$env:windir\temp\DeviceRename_Scheduledtask-Systrack.log"
+  $Host.UI.RawUI.WindowTitle = "Hidden Window"
+  $Host.UI.RawUI.WindowVisibility = "Minimize"
+ Start-Transcript -Path "$env:windir\temp\DeviceRename_Scheduledtask-Systrack.log"
 Suspend-BitLocker -MountPoint "C" -RebootCount 1 -Verbose
 ##########################################################
 ###############-------------Step 1---#####################
