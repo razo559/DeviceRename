@@ -48,9 +48,9 @@ $ComputerName = $env:COMPUTERNAME.substring(0, 4)
     "LFGL"  {$LocationPrefix = "LFGL" ; Write-Host -Object "LFGL" }
 }#
 
-#Rename-Computer -ComputerName $env:COMPUTERNAME -NewName "$LocationPrefix-$serial" -LocalCredential $Credential -DomainCredential $Credential  -Force -PassThru  -Verbose
+Rename-Computer -ComputerName $env:COMPUTERNAME -NewName "$LocationPrefix-$serial" -LocalCredential $Credential -DomainCredential $Credential  -Force -PassThru  -Verbose
 Write-Host "New computer name is " $env:COMPUTERNAME
-#shutdown /r /f /t 14400 /c "Please Reboot your Computer, System needs to reboot, please save your work."
+shutdown /r /f /t 14400 /c "Please Reboot your Computer, System needs to reboot, please save your work."
 
 Stop-Transcript
 
