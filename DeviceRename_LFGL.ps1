@@ -1,5 +1,7 @@
-  $Host.UI.RawUI.WindowTitle = "Hidden Window"
-  $Host.UI.RawUI.WindowVisibility = "Minimize"
+$t = '[DllImport("user32.dll")] public static extern bool ShowWindow(int handle, int state);'
+add-type -name win -member $t -namespace native
+[native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0)
+
  Start-Transcript -Path "$env:windir\temp\DeviceRename_Scheduledtask-Systrack.log"
 Suspend-BitLocker -MountPoint "C" -RebootCount 1 -Verbose
 ##########################################################
