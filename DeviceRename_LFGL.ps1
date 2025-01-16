@@ -13,7 +13,7 @@ Suspend-BitLocker -MountPoint "C" -RebootCount 1 -Verbose
 ##
 $KeyLocation = "\\pw1appsccm01\sources$\temp\temp5.key"
 # $KeyLocation = "\\NetworkLocation\c$\temp\EncryptedKey.key"
-$username = "ibddomain\lrazo"
+$username = "ibddomain\gconroe"
 #$LocationPrefix = "ATLL"
 ##
 ##
